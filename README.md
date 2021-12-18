@@ -14,11 +14,11 @@ The game is in Japanese. The Japanese font looks so cool I really like the desig
 ### How to Play
 
 ![](./1.png)
-WASD----Move<br>
-hold SHIFT----Run<br>
-Ctrl----Crouch<br>
-Space----Jump<br>
-F----Flash light<br>
+WASD        ----      Move<br>
+hold SHIFT  ----      Run<br>
+Ctrl        ----      Crouch<br>
+Space       ----      Jump<br>
+F           ----      Flash light<br>
 
 ### Screenshots
 
