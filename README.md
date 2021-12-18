@@ -1,17 +1,17 @@
-### Byoinosore(Hospital Horror)
+## Byoinosore(Hospital Horror)
 
-#### Title
+### Title
 
 ![](./title.jpg)
 
-#### Introduction
+### Introduction
 
 This is a horror game made with Unity 2021.1.16f1.<br>
 You are about to start a journey in an old hospital. There is no one there but you and...<br>
 
 The game is in Japanese. The Japanese font looks so cool I really like the design. By the way, it is called "Japanese-Zomzi". I generated all text [here](https://fontmeme.com/japanese/)
 
-#### How to Play
+### How to Play
 
 ![](./1.png)
 WASD----Move<br>
@@ -20,7 +20,7 @@ Ctrl----Crouch<br>
 Space----Jump<br>
 F----Flash light<br>
 
-#### Screenshots
+### Screenshots
 
 ![](./2.png)
 
