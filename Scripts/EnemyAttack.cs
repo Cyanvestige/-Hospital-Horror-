@@ -42,6 +42,7 @@ public class EnemyAttack : MonoBehaviour
         
         DistanceToPlayer = Vector3.Distance(Player.position, Enemy.transform.position);
         if(DistanceToPlayer < MaxRange){
+             
             if(IsChecking == true){
                 IsChecking = false;
 
@@ -64,6 +65,7 @@ public class EnemyAttack : MonoBehaviour
             Enemy.transform.rotation = Quaternion.LookRotation(Player.transform.position - Enemy.transform.position);
             
             Enemy.GetComponent<EnemyMove>().enabled = false;
+     
             ChaseMusic.gameObject.SetActive(true);
             if(DistanceToPlayer > AttackDistance){
                 Nav.isStopped = false;
@@ -71,28 +73,29 @@ public class EnemyAttack : MonoBehaviour
                 Nav.acceleration = 24;
                 Nav.SetDestination(Player.position);
                 Nav.speed = ChaseSpeed;
-                CrawlerAttackSound.gameObject.SetActive(false);
-                GhoulAttackSound.gameObject.SetActive(false);
+                if(Crawler)CrawlerAttackSound.gameObject.SetActive(false);
+                if(Ghoul)GhoulAttackSound.gameObject.SetActive(false);
             }
             else{
                 Nav.isStopped = true;
                 Debug.Log("I am attacking");
                 Anim.SetInteger("State",2);
-                if(Crawler)CrawlerAttackSound.gameObject.SetActive(true);
-                if(Ghoul)GhoulAttackSound.gameObject.SetActive(true);
                 Nav.acceleration = 180;
                 if(Global.HP > 0){
                     if(Ghoul){
+                        GhoulAttackSound.gameObject.SetActive(true);
                         Global.HP -= 0.06f;
                     }
                     else{
                         Global.HP -= 0.03f;
+                        CrawlerAttackSound.gameObject.SetActive(true);
                     }
                 }
+                
                     
             }
         }
-        else if(!RunToPlayer){
+        else{
             // Nav.isStopped = true;
             Anim.SetInteger("State",0);
         }
@@ -111,6 +114,7 @@ public class EnemyAttack : MonoBehaviour
 
         if(FailedChecks > MaxChecks || Global.WinTheGame){
             Enemy.GetComponent<EnemyMove>().enabled = true; 
+           
             Nav.isStopped = false;
             Nav.speed = WalkSpeed;
             FailedChecks = 0;

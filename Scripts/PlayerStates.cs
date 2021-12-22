@@ -12,6 +12,7 @@ public class PlayerStates : MonoBehaviour
     [SerializeField] PostProcessProfile Death;
     [SerializeField] Text Health;
     [SerializeField] GameObject Intro;
+     [SerializeField] GameObject IntroEng;
     [SerializeField] GameObject Instruction;
     [SerializeField] GameObject DeathPanel;
     [SerializeField] GameObject Scream;
@@ -54,6 +55,7 @@ public class PlayerStates : MonoBehaviour
     IEnumerator IntroTimed(){ 
         yield return new WaitForSeconds(4);
         Intro.gameObject.SetActive(false);
+        IntroEng.gameObject.SetActive(false);
         yield return new WaitForSeconds(2);
         Instruction.gameObject.SetActive(false);
     }

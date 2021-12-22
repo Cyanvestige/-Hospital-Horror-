@@ -46,10 +46,10 @@ public class Pickups : MonoBehaviour
                 CanSeeOpenDoor = true;
                 
                 if(hit.transform.gameObject.GetComponent<DoorScript>().IsOpen == false){
-                    DoorText.text = "Eを押してドアを開ける";
+                    DoorText.text = "Press E to open the door";
                 }
                 else{
-                    DoorText.text = "Eを押してドアを閉める";
+                    DoorText.text = "Press E to close the door";
                 }
                 if(Input.GetKeyDown(KeyCode.E)){
                     hit.transform.gameObject.SendMessage("DoorSwitch");
